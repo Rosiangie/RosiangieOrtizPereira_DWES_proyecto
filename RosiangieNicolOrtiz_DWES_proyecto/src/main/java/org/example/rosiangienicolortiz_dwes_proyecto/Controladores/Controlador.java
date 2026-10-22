@@ -29,7 +29,7 @@ public class Controlador {
     }
 
     public List<Pokemon> cargarPokemons() {
-        ClassPathResource json = new ClassPathResource("pokemon.json");
+        ClassPathResource json = new ClassPathResource("data/pokemon.json");
         ObjectMapper mapper = new ObjectMapper();
 
         try (InputStream entrada = json.getInputStream()){
@@ -49,19 +49,17 @@ public class Controlador {
     }
     @PostMapping("/pokemons")
     public String lista(@Valid @ModelAttribute("entrenador") Entrenador entrenador, BindingResult errores){
-
-        return "redirect:/todos";
-        // si  tiene errores
-        // vuelve a la vista
-        // si no tiene errors
-        //redirect
+    if(errores.hasErrors()){
+        return "index";
+    }
+        return "redirect:/pokemons";
     }
 
 
 
-    @GetMapping("/todos")
+    @GetMapping("/pokemons")
     public String todos(Model model){
        model.addAttribute("lista", pokemones);
-        return "todos";
+        return "pokemons";
     }
 }
