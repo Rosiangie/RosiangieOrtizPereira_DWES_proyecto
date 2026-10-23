@@ -1,0 +1,65 @@
+body {
+    background-image: url('images/fondo.webp');
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color:red;
+
+}
+form {
+    background-color: rgba(255, 255, 255, 0.9); /* Un fondo blanco semi-transparente */
+    padding: 40px;                             /* Hace la caja más grande ampliando su espacio interno */
+    border-radius: 20px;                       /* ¡Aquí tienes el border-radius para redondear las esquinas! */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Opcional: añade una sombra para darle efecto de profundidad */
+    width: 400px;                              /* Define un ancho fijo o máximo para la caja */
+}
+/* Efecto al pasar el cursor por encima de la tarjeta */
+.pokemon-card:hover {
+    transform: translateY(-5px);                /* Eleva un poquito la tarjeta */
+}
+
+.pokemon-container {
+    display: flex;
+    flex-direction: row;        /* Los coloca horizontalmente en fila */
+    justify-content: center;    /* Los centra en la pantalla */
+    align-items: center;
+    flex-wrap: wrap;            /* Si hay muchos, bajan a la siguiente fila sin romperse */
+    gap: 20px;                  /* Separación uniforme entre tarjetas */
+    width: 100%;
+    margin-top: 20px;
+}
+
+/* Tarjeta de cada Pokémon: les da un fondo sólido y bonito */
+.pokemon-card {
+    background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco semitransparente */
+    border-radius: 12px;                        /* Bordes redondeados */
+    padding: 15px;
+    width: 150px;                               /* Ancho fijo para cada tarjeta */
+    text-align: center;                         /* Centra el texto y la imagen */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);  /* Sombra para resaltar sobre el fondo */
+}
+
+/* Ajuste de la imagen */
+.pokemon-card img {
+    width: 90px;
+    height: 90px;
+    object-fit: contain;
+}
+
+/* Estilo para los textos */
+.pokemon-card h3 {
+    margin: 8px 0 4px 0;
+    color: #333;
+    font-size: 1.1rem;
+    text-transform: capitalize;
+}
+
+.pokemon-card p {
+    margin: 0;
+    color: #666;
+    font-size: 0.9rem;
+    font-weight: bold;
+}

@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" th:href="@{/estilos.css}">
 </head>
 <body>
-    <h1>Bienvenidos</h1>
+    <h1>Bienvenidos Freakis</h1>
+    <h2>Dejen sus datos y vean sus pokemones</h2>
     <form th:action="@{/pokemons}" method="post" th:object=${entrenador}>
        <fieldset>
            <legend>Entrenadores Frikis</legend>
