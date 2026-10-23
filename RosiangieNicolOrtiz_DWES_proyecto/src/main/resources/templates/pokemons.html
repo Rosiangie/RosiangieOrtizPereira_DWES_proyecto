@@ -5,14 +5,16 @@
     <title>Title</title>
     <link rel="stylesheet" th:href="@{/estilos.css}">
 </head>
-<body>
+<body >
 <h1>Pokemones del Demonio</h1>
+<main class="pokemons">
 <div class="pokemon-container" th:each="pokemon : ${lista}">
-  <p th:text="${pokemon.getName()}"></p>
-    <p th:text="${pokemon.getId()}"></p>
-    <img th:src="${pokemon.getSprites().getFront_default()}">
-
+  <p class="pokemon-card" th:text="${pokemon.getName()}"></p>
+    <h3 class="pokemon-card" th:text="${pokemon.getId()}"></h3>
+    <img class="pokemon-card" th:src="${pokemon.getSprites().getFront_default()}">
+    <a th:href="@{/pokemons/{id}(id=${pokemon.getId()})}">Detalle</a>
 </div>
+</main>
 
 </body>
 </html>

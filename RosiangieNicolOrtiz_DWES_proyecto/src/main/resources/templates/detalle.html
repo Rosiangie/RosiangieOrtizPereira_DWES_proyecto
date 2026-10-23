@@ -5,6 +5,10 @@
     <title>Title</title>
 </head>
 <body>
-
+<div class="pokemon-container">
+    <p class="pokemon-card" th:text="${pokemon.getName()}"></p>
+    <h3 class="pokemon-card" th:text="${pokemon.getId()}"></h3>
+    <img class="pokemon-card" th:src="${pokemon.getSprites().getFront_default()}">
+</div>
 </body>
 </html>

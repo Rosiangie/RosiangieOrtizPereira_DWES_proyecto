@@ -1,55 +1,66 @@
 body {
     background-image: url('images/fondo.webp');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Mantiene el fondo estático al hacer scroll */
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start; /* Cambiado para permitir scroll desde arriba si es muy largo */
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     margin: 0;
-    color:red;
-
+    padding: 40px 20px; /* Margen superior/inferior para que no pegue en los bordes */
+    color: red;
+    font-family: sans-serif;
+    box-sizing: border-box;
 }
 form {
-    background-color: rgba(255, 255, 255, 0.9); /* Un fondo blanco semi-transparente */
-    padding: 40px;                             /* Hace la caja más grande ampliando su espacio interno */
-    border-radius: 20px;                       /* ¡Aquí tienes el border-radius para redondear las esquinas! */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Opcional: añade una sombra para darle efecto de profundidad */
-    width: 400px;                              /* Define un ancho fijo o máximo para la caja */
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    width: 400px;
 }
-/* Efecto al pasar el cursor por encima de la tarjeta */
+
 .pokemon-card:hover {
-    transform: translateY(-5px);                /* Eleva un poquito la tarjeta */
+    transform: translateY(-5px);
 }
 
 .pokemon-container {
     display: flex;
-    flex-direction: row;        /* Los coloca horizontalmente en fila */
-    justify-content: center;    /* Los centra en la pantalla */
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    flex-wrap: wrap;            /* Si hay muchos, bajan a la siguiente fila sin romperse */
-    gap: 20px;                  /* Separación uniforme entre tarjetas */
+    flex-wrap: wrap;
+    gap: 20px;
     width: 100%;
     margin-top: 20px;
+    border: 5px solid black;
+    border-radius: 10px;
+    background: gray;
+    opacity: 70%;
+    margin: 20px;
+
 }
 
-/* Tarjeta de cada Pokémon: les da un fondo sólido y bonito */
+
 .pokemon-card {
-    background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco semitransparente */
-    border-radius: 12px;                        /* Bordes redondeados */
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 12px;
     padding: 15px;
-    width: 150px;                               /* Ancho fijo para cada tarjeta */
-    text-align: center;                         /* Centra el texto y la imagen */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);  /* Sombra para resaltar sobre el fondo */
+    width: 150px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
-/* Ajuste de la imagen */
+
 .pokemon-card img {
     width: 90px;
     height: 90px;
     object-fit: contain;
 }
 
-/* Estilo para los textos */
+
 .pokemon-card h3 {
     margin: 8px 0 4px 0;
     color: #333;
@@ -62,4 +73,10 @@ form {
     color: #666;
     font-size: 0.9rem;
     font-weight: bold;
+}
+main{
+    display: grid;
+    align-content: center;
+    grid-template-columns: repeat(4, 300px);
+    gap: 20px;
 }

@@ -11,6 +11,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import tools.jackson.core.type.TypeReference;
 import tools.jackson.databind.ObjectMapper;
@@ -62,4 +63,21 @@ public class Controlador {
        model.addAttribute("lista", pokemones);
         return "pokemons";
     }
+
+    @GetMapping("/pokemons/{id}")
+    public String detalle(@PathVariable("id") Integer id, Model model){
+    model.addAttribute("pokemon", buscarPokemon(id, pokemones));
+    return "detalle";
+    }
+
+    private Pokemon buscarPokemon(Integer id, List<Pokemon> lista) {
+        Pokemon elemento = null;
+
+        for (Pokemon pokemon : lista) {
+            if (pokemon.getId() == id) {
+                elemento = pokemon;
+            }
+        }return elemento;
+    }
+
 }

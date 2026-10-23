@@ -5,7 +5,7 @@ import java.util.Objects;
 
 public class Pokemon {
     private int height;
-    private int id;
+    private Integer id;
     private String name;
     private List<Stats> stats;
     private Sprites sprites;
@@ -21,11 +21,11 @@ public class Pokemon {
         this.height = height;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -83,6 +83,8 @@ public class Pokemon {
         Pokemon pokemon = (Pokemon) o;
         return height == pokemon.height && id == pokemon.id && weight == pokemon.weight && Objects.equals(name, pokemon.name) && Objects.equals(stats, pokemon.stats) && Objects.equals(sprites, pokemon.sprites) && Objects.equals(types, pokemon.types) && Objects.equals(moves, pokemon.moves);
     }
+
+
 
     @Override
     public int hashCode() {
