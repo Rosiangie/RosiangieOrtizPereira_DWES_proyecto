@@ -14,6 +14,7 @@
     <div th:each="t: ${pokemon.getTypes()}">
         <p class="pokemon-card" th:text="${t}"></p>
     </div>
+    <span th:text="${pokemon.getWeight() > 500 ? 'Pesado' : (pokemon.getWeight() > 100 ? 'Normal' : 'Ligero') }"></span>
     <h4>Estadisticas de Pokemon</h4>
     <table class="pokemon-card" >
         <thead>

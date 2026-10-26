@@ -13,7 +13,6 @@
   <p class="pokemon-card" th:text="${pokemon.getName()}"></p>
     <h3 class="pokemon-card" th:text="${pokemon.getId()}"></h3>
     <img class="pokemon-card" th:src="${pokemon.getSprites().getFront_default()}">
-    <span th:text="${pokemon.getWeight() > 500 ? 'Pesado' : (pokemon.getWeight() > 100 ? 'Normal' : 'Ligero') }"></span>
     <a th:href="@{/pokemons/{id}(id=${pokemon.getId()})}">Detalle</a>
 </div>
 </main>
