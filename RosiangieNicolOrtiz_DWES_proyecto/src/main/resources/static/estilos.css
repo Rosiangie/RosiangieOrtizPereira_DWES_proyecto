@@ -79,6 +79,8 @@ main{
     align-content: center;
     grid-template-columns: repeat(4, 300px);
     gap: 20px;
+    flex: 1;
+    width: 100%;
 
 }
 footer{
@@ -104,3 +106,4 @@ footer{
 .electric{
     background: yellow;
 }
+footer { margin-top: auto; }

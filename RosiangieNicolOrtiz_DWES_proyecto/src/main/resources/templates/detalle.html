@@ -7,7 +7,7 @@
 </head>
 <body>
 <header th:insert="~{fragments/menu :: menu}"></header>
-<div class="pokemon-container">
+<div th:class="pokemon-container" th:classappend="${pokemon.getTypes().get(0)}">
     <p class="pokemon-card" th:text="${pokemon.getName()}"></p>
     <h3 class="pokemon-card" th:text="${pokemon.getId()}"></h3>
     <p class="pokemon-card" th:text="${pokemon.getWeight()}"></p>
