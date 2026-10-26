@@ -33,7 +33,7 @@ Sigue estos pasos para clonar y ejecutar la aplicación en tu entorno local:
 
 1. Clona el repositorio en tu equipo:
    \`\`\`bash
-   git clone https://github.com/tu-usuario/proyecto-pokemon.git
+   git clone https://github.com/Rosiangie/RosiangieOrtizPereira_DWES_proyecto.git
    \`\`\`
 
 2. Navega al directorio del proyecto:
