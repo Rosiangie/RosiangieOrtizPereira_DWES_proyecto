@@ -67,7 +67,15 @@ public class Controlador {
     @GetMapping("/pokemons/{id}")
     public String detalle(@PathVariable("id") Integer id, Model model){
     model.addAttribute("pokemon", buscarPokemon(id, pokemones));
-    return "detalle";
+    Pokemon pokemon = buscarPokemon(id, pokemones);
+    if(pokemon==null){
+        return "notfound";
+    }
+    else{
+
+        return "detalle";
+
+    }
     }
 
     private Pokemon buscarPokemon(Integer id, List<Pokemon> lista) {

@@ -6,6 +6,7 @@
     <link rel="stylesheet" th:href="@{/estilos.css}">
 </head>
 <body>
+
     <h1>Bienvenidos Freakis</h1>
     <h2>Dejen sus datos y vean sus pokemones</h2>
     <form th:action="@{/pokemons}" method="post" th:object=${entrenador}>
@@ -19,5 +20,6 @@
         </div>
        </fieldset>
     </form>
+<footer th:insert="~{fragments/footer :: footer}"></footer>
 </body>
 </html>

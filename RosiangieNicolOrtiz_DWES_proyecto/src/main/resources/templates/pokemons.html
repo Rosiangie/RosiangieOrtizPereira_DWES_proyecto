@@ -6,15 +6,16 @@
     <link rel="stylesheet" th:href="@{/estilos.css}">
 </head>
 <body >
+<header th:insert="~{fragments/menu :: menu}"></header>
 <h1>Pokemones del Demonio</h1>
 <main class="pokemons">
-<div class="pokemon-container" th:each="pokemon : ${lista}">
+<div th:classappend="${pokemon.getTypes().get(0) == 'fire' ? 'fire' : ${pokemon.getTypes().get(0)== 'water' ? 'water' : ${pokemon.getTypes().get(0)== 'electric' ? 'electric' : ${pokemon.getTypes().get(0) == 'grass' ? 'grass' : ${pokemon.getTypes().get(0) == 'poison' ? 'poison' : 'flying'  }" th:class="pokemon-container" th:each="pokemon : ${lista}">
   <p class="pokemon-card" th:text="${pokemon.getName()}"></p>
     <h3 class="pokemon-card" th:text="${pokemon.getId()}"></h3>
     <img class="pokemon-card" th:src="${pokemon.getSprites().getFront_default()}">
     <a th:href="@{/pokemons/{id}(id=${pokemon.getId()})}">Detalle</a>
 </div>
 </main>
-
+<footer th:insert="~{fragments/footer :: footer}"></footer>
 </body>
 </html>

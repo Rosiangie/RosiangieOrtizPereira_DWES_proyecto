@@ -79,4 +79,28 @@ main{
     align-content: center;
     grid-template-columns: repeat(4, 300px);
     gap: 20px;
+
+}
+footer{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+.fire{
+    background: orange;
+}
+.flying{
+    background: aliceblue;
+}
+.grass{
+    background: green;
+}
+.poison{
+    background: violet;
+}
+.water{
+    background: #aeaef1;
+}
+.electric{
+    background: yellow;
 }
