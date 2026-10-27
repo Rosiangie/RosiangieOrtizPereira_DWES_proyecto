@@ -6,17 +6,20 @@
     <link rel="stylesheet" th:href="@{/estilos.css}">
 </head>
 <body>
+
     <h1>Bienvenidos Freakis</h1>
     <h2>Dejen sus datos y vean sus pokemones</h2>
     <form th:action="@{/pokemons}" method="post" th:object=${entrenador}>
        <fieldset>
-           <legend>Entrenadores Frikis</legend>
-       </fieldset>
+           <legend>Entrenadores</legend>
+
         <div>
             <label for="nombre">Nombre</label>
             <input type="text" id="nombre" name="nombre" th:field="*{nombre}">
             <button type="submit">Enviar</button>
         </div>
+       </fieldset>
     </form>
+<footer th:insert="~{fragments/footer :: footer}"></footer>
 </body>
 </html>

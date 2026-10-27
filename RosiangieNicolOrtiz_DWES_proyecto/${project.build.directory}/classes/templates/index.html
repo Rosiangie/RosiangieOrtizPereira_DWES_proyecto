@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Bienvenidos</h1>
+    <form th:action="@{/pokemons}" method="post" th:object=${entrenador}>
+       <fieldset>
+           <legend>Entrenadores Frikis</legend>
+       </fieldset>
+        <div>
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="nombre" th:field="*{nombre}">
+            <button type="submit">Enviar</button>
+        </div>
+    </form>
+</body>
+</html>

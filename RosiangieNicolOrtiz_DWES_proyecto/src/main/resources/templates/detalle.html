@@ -3,8 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" th:href="@{/estilos.css}">
 </head>
 <body>
+<header th:insert="~{fragments/menu :: menu}"></header>
+<div th:class="pokemon-container" th:classappend="${pokemon.getTypes().get(0)}">
+    <p class="pokemon-card" th:text="${pokemon.getName()}"></p>
+    <h3 class="pokemon-card" th:text="${pokemon.getId()}"></h3>
+    <p class="pokemon-card" th:text="${pokemon.getWeight()}"></p>
+    <div th:each="t: ${pokemon.getTypes()}">
+        <p class="pokemon-card" th:text="${t}"></p>
+    </div>
+    <span th:text="${pokemon.getWeight() > 500 ? 'Pesado' : (pokemon.getWeight() > 100 ? 'Normal' : 'Ligero') }"></span>
+    <h4>Estadisticas de Pokemon</h4>
+    <table class="pokemon-card" >
+        <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Valor</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="stats: ${pokemon.getStats()}">
+            <td th:text="${stats.getName()}"></td>
+            <td th:text="${stats.getValue()}"></td>
+        </tr>
+        </tbody>
+    </table>
+    <table class="pokemon-card">
+        <thead>
+        <tr>
+            <th>Movimientos de Pokemon</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="move: ${pokemon.getMoves()}">
+            <td th:text="${move.getName()}"></td>
+        </tr>
+        </tbody>
+    </table>
 
+    <img class="pokemon-card" th:src="${pokemon.getSprites().getFront_default()}">
+</div>
+<footer th:insert="~{fragments/footer :: footer}"></footer>
 </body>
 </html>
